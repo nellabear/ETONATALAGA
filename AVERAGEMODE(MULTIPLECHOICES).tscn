@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://q7qbsa7fi7lj"]
+[gd_scene load_steps=26 format=3 uid="uid://q7qbsa7fi7lj"]
 
 [ext_resource type="Script" path="res://MULTILPLECHOICE/MSCRIPTS/MCONTROLLERS/MGAME_CONTROLLER.gd" id="1_blsmx"]
 [ext_resource type="Texture2D" uid="uid://c1rgibjnb815c" path="res://MultiplayerScripts/14.png" id="2_dfarq"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://buvw3iifvn4n7" path="res://PICTURES/FONT/Happy School.ttf" id="8_4ubos"]
 [ext_resource type="AudioStream" uid="uid://yq4dmn5aipaf" path="res://AUDIO/CORRECT.MP3" id="8_ri1ek"]
 [ext_resource type="AudioStream" uid="uid://doy1evnpp8lu5" path="res://AUDIO/WRONG.mp3" id="9_ou58w"]
+[ext_resource type="Theme" uid="uid://bubov50w37oj" path="res://PICTURES/BUTTONS/BGLETTER.tres" id="9_qdbiq"]
 [ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="11_76s4h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_25cw7"]
@@ -33,6 +34,16 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02dqj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0bvh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hdwr"]
+line_spacing = 20.0
+font = ExtResource("8_4ubos")
+font_size = 45
+font_color = Color(1, 0.796078, 1, 1)
+outline_size = 1
+outline_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+shadow_size = 20
+shadow_color = Color(0.882282, 0.708932, 0.75974, 0)
 
 [sub_resource type="FontVariation" id="FontVariation_0a400"]
 
@@ -116,13 +127,13 @@ offset_bottom = 625.0
 grow_horizontal = 2
 
 [node name="MQuestionText" type="Label" parent="MULTIPLECHOICE/Content/MQuestionInfo"]
-visible = false
 layout_mode = 2
 
 [node name="MImageHolder" type="Panel" parent="MULTIPLECHOICE/Content/MQuestionInfo"]
 layout_mode = 2
 
 [node name="MQuestionImage" type="TextureRect" parent="MULTIPLECHOICE/Content/MQuestionInfo/MImageHolder"]
+visible = false
 custom_minimum_size = Vector2(55, 660)
 layout_mode = 1
 anchors_preset = 15
@@ -229,6 +240,54 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_02dqj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_v0bvh")
 alignment = 0
 autowrap_mode = 2
+
+[node name="PowerUpPanel" type="Panel" parent="MULTIPLECHOICE/Content"]
+offset_left = 23.0
+offset_top = 316.0
+offset_right = 124.0
+offset_bottom = 626.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MULTIPLECHOICE/Content/PowerUpPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PowerUpNotification" type="Label" parent="MULTIPLECHOICE/Content"]
+offset_left = 24.0
+offset_top = 288.0
+offset_right = 125.0
+offset_bottom = 311.0
+
+[node name="ScoreContainer" type="VBoxContainer" parent="MULTIPLECHOICE/Content"]
+offset_left = 39.0
+offset_top = 111.0
+offset_right = 79.0
+offset_bottom = 151.0
+
+[node name="ScoreLabel" type="Label" parent="MULTIPLECHOICE/Content/ScoreContainer"]
+layout_mode = 2
+
+[node name="PlayerTurnLabel" type="Label" parent="MULTIPLECHOICE/Content"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -654.0
+offset_top = -104.0
+offset_right = 669.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("9_qdbiq")
+text = "
+"
+label_settings = SubResource("LabelSettings_0hdwr")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MAudioCorrect" type="AudioStreamPlayer" parent="MULTIPLECHOICE"]
 stream = ExtResource("8_ri1ek")

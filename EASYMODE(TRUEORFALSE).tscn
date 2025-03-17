@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c0xnruv0teun6"]
+[gd_scene load_steps=27 format=3 uid="uid://c0xnruv0teun6"]
 
 [ext_resource type="Script" path="res://TRUEORFALSE/CONTROLLERS/GAME_CONTROLLER.gd" id="1_0wfp7"]
 [ext_resource type="Texture2D" uid="uid://c1rgibjnb815c" path="res://MultiplayerScripts/14.png" id="2_btxro"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://buvw3iifvn4n7" path="res://PICTURES/FONT/Happy School.ttf" id="5_k8do7"]
 [ext_resource type="AudioStream" uid="uid://yq4dmn5aipaf" path="res://AUDIO/CORRECT.MP3" id="8_ahmb7"]
 [ext_resource type="AudioStream" uid="uid://doy1evnpp8lu5" path="res://AUDIO/WRONG.mp3" id="9_df8i3"]
+[ext_resource type="Theme" uid="uid://bubov50w37oj" path="res://PICTURES/BUTTONS/BGLETTER.tres" id="10_40wft"]
 [ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="12_rkoya"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6o7s4"]
@@ -34,6 +35,16 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l6rk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmmd2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cc7mu"]
+line_spacing = 20.0
+font = ExtResource("5_k8do7")
+font_size = 45
+font_color = Color(1, 0.796078, 1, 1)
+outline_size = 1
+outline_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+shadow_size = 20
+shadow_color = Color(0.882282, 0.708932, 0.75974, 0)
 
 [sub_resource type="FontVariation" id="FontVariation_jn7pf"]
 
@@ -197,12 +208,55 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -245.0
-offset_top = -84.0
-offset_right = 245.0
-offset_bottom = -7.0
+offset_left = -654.0
+offset_top = -104.0
+offset_right = 669.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("10_40wft")
+text = "
+"
+label_settings = SubResource("LabelSettings_cc7mu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreContainer" type="VBoxContainer" parent="TRUEorFALSE/Content"]
+offset_left = 39.0
+offset_top = 111.0
+offset_right = 79.0
+offset_bottom = 151.0
+
+[node name="ScoreLabel" type="Label" parent="TRUEorFALSE/Content/ScoreContainer"]
+layout_mode = 2
+
+[node name="PowerUpPanel" type="Panel" parent="TRUEorFALSE/Content"]
+offset_left = 23.0
+offset_top = 316.0
+offset_right = 124.0
+offset_bottom = 626.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TRUEorFALSE/Content/PowerUpPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PowerUpNotification" type="Label" parent="TRUEorFALSE/Content"]
+offset_left = 24.0
+offset_top = 288.0
+offset_right = 125.0
+offset_bottom = 311.0
+
+[node name="ResponseTimesContainer" type="VBoxContainer" parent="TRUEorFALSE/Content"]
+offset_left = 978.0
+offset_top = 75.0
+offset_right = 1136.0
+offset_bottom = 194.0
+
+[node name="ResponseTimeLabel" type="Label" parent="TRUEorFALSE/Content/ResponseTimesContainer"]
+layout_mode = 2
 
 [node name="AudioCorrect" type="AudioStreamPlayer" parent="TRUEorFALSE"]
 stream = ExtResource("8_ahmb7")

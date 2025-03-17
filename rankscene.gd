@@ -1,38 +1,43 @@
 extends Control
 
-@onready var rank_container = $RankContainer
-@onready var back_button = $BackButton
-
 func _ready():
-	# Connect back button
-	back_button.connect("pressed", _on_back_button_pressed)
+	# Get ranked player indices
+	var ranked_indices = GameData.get_ranked_players()
 	
-	# Display the final rankings
-	display_rankings()
+	# Hide all rank containers initially
+	for i in range(1, 5):
+		var rank_container = $BACKGROUND/RankingsContainer.get_node("Rank" + str(i) + "Container")
+		if rank_container:
+			rank_container.visible = false
+	
+	# Show and populate rank containers based on actual player count
+	for i in range(ranked_indices.size()):
+		var player_idx = ranked_indices[i]
+		var rank_container = $BACKGROUND/RankingsContainer.get_node("Rank" + str(i+1) + "Container")
+		
+		if rank_container:
+			rank_container.visible = true
+			
+			# Set player name and score
+			var name_label = rank_container.get_node("Player" + str(i+1) + "Name")
+			var score_label = rank_container.get_node("Player" + str(i+1) + "Score")
+			
+			if name_label and score_label:
+				name_label.text = GameData.player_names[player_idx]
+				score_label.text = str(GameData.scores[player_idx])
+	
+	# Connect button signals
+	$PlayAgainButton.connect("pressed", _on_play_again_pressed)
+	$MainMenuButton.connect("pressed", _on_main_menu_pressed)
 
-func display_rankings():
-	# Sort players by score (highest first)
-	var player_data = []
-	for i in range(GameData.player_count):
-		player_data.append({
-			"name": GameData.player_names[i],
-			"score": GameData.scores[i]
-		})
+func _on_play_again_pressed():
+	# Reset game with same settings and players
+	GameData.reset_game()
 	
-	# Sort by score (descending)
-	player_data.sort_custom(func(a, b): return a.score > b.score)
-	
-	# Display rankings
-	var rank_text = ""
-	for i in range(player_data.size()):
-		rank_text += str(i + 1) + ". " + player_data[i].name + ": " + str(player_data[i].score) + " points\n"
-	
-	$RankContainer/RankText.text = rank_text
-	
-	# Show winner announcement
-	if player_data.size() > 0:
-		$WinnerLabel.text = "Winner: " + player_data[0].name + "!"
-
-func _on_back_button_pressed():
-	# Return to game selection scene
+	# Return to the game selection scene
 	get_tree().change_scene_to_file("res://HOST.tscn")
+
+func _on_main_menu_pressed():
+	# Reset everything and return to main menu
+	GameData.reset_game()
+	get_tree().change_scene_to_file("res://MAIN MENU.tscn")

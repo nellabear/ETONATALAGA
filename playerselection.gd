@@ -1,19 +1,19 @@
 extends Control
 
 signal players_selected(player_count)
+
 # Number of players selected (1-4)
 var selected_players = 1
 
 # Called when the node enters the scene tree for the first time
 func _ready():
 	# Connect signals for player selection buttons
-	$VBoxContainer/PlayerButtons/Player1Button.connect("pressed", _on_player_button_pressed.bind(1))
-	$VBoxContainer/PlayerButtons/Player2Button.connect("pressed", _on_player_button_pressed.bind(2))
-	$VBoxContainer/PlayerButtons/Player3Button.connect("pressed", _on_player_button_pressed.bind(3))
-	$VBoxContainer/PlayerButtons/Player4Button.connect("pressed", _on_player_button_pressed.bind(4))
+	$VBoxContainer/PlayerButtons/Player1Button.pressed.connect(_on_player_button_pressed.bind(1))
+	$VBoxContainer/PlayerButtons/Player2Button.pressed.connect(_on_player_button_pressed.bind(2))
+	$VBoxContainer/PlayerButtons/Player3Button.pressed.connect(_on_player_button_pressed.bind(3))
+	$VBoxContainer/PlayerButtons/Player4Button.pressed.connect(_on_player_button_pressed.bind(4))
 	
 	# Connect continue button
-	$ContinueButton.connect("pressed", _on_continue_button_pressed)
 	
 	# Set initial selection
 	_update_selection(1)
@@ -49,5 +49,6 @@ func _on_continue_button_pressed():
 	GameData.reset_game()
 	
 	emit_signal("players_selected", selected_players)
+	
 	# Change to name input scene
 	get_tree().change_scene_to_file("res://NAMESELECTION.tscn")

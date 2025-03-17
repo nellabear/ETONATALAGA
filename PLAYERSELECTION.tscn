@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccbkbu0quosuo"]
+[gd_scene load_steps=9 format=3 uid="uid://ccbkbu0quosuo"]
 
 [ext_resource type="Script" path="res://playerselection.gd" id="1_py3w3"]
 [ext_resource type="Texture2D" uid="uid://bxgqtxj2namfr" path="res://ENTER NAME (2).png" id="2_xoatd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://jg5d8rah3xin" path="res://landscape (2500 x 1080 px) (2500 x 600 px) (3).png" id="3_md14d"]
 [ext_resource type="Script" path="res://back_button.gd" id="4_32wbo"]
 [ext_resource type="Theme" uid="uid://bgqig27qthhma" path="res://PICTURES/BUTTONS/PROCEED.tres" id="4_kbk5h"]
+[ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="7_bgnch"]
 
 [sub_resource type="FontVariation" id="FontVariation_th1x4"]
 base_font = ExtResource("3_1su4j")
@@ -116,6 +117,10 @@ texture_normal = ExtResource("3_md14d")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("4_32wbo")
+
+[node name="MasterMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_bgnch")
+autoplay = true
 
 [connection signal="pressed" from="PLAYERSELECTION/ContinueButton" to="PLAYERSELECTION" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="BACK BUTTON" to="BACK BUTTON" method="_on_pressed"]

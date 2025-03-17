@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://0dikvis7cd6w"]
+[gd_scene load_steps=12 format=3 uid="uid://0dikvis7cd6w"]
 
 [ext_resource type="Texture2D" uid="uid://cc4evoelljs80" path="res://landscape (12).png" id="1_5xb5r"]
 [ext_resource type="Script" path="res://rankscene.gd" id="1_no3ix"]
+[ext_resource type="Theme" uid="uid://rvffpgyk58u6" path="res://PICTURES/BUTTONS/PLAYAGAIN.tres" id="3_7q5d7"]
+[ext_resource type="FontFile" uid="uid://buvw3iifvn4n7" path="res://PICTURES/FONT/Happy School.ttf" id="3_vod63"]
+[ext_resource type="Theme" uid="uid://dsqvcyuv8f0ib" path="res://PICTURES/BUTTONS/MAINMENU.tres" id="4_ca6af"]
+[ext_resource type="Shader" path="res://RANKING(ENDGAME).gdshader" id="4_i6ubl"]
+[ext_resource type="Texture2D" uid="uid://bdo7dilod8t6l" path="res://PICTURES/BUTTONS/landscape (14).png" id="5_fq7x8"]
+
+[sub_resource type="FontVariation" id="FontVariation_414vm"]
+base_font = ExtResource("3_vod63")
+
+[sub_resource type="FontVariation" id="FontVariation_7283n"]
+base_font = ExtResource("3_vod63")
+
+[sub_resource type="FontVariation" id="FontVariation_vgf5a"]
+base_font = ExtResource("3_vod63")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qxusx"]
+shader = ExtResource("4_i6ubl")
+shader_parameter/speed = 0.1
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,7 +30,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("1_no3ix")
 
-[node name="TextureRect" type="TextureRect" parent="RANKSCENE"]
+[node name="BACKGROUND" type="TextureRect" parent="RANKSCENE"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,3 +39,124 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_5xb5r")
 expand_mode = 1
+
+[node name="Title" type="Label" parent="RANKSCENE/BACKGROUND"]
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 100.0
+
+[node name="RankingsContainer" type="VBoxContainer" parent="RANKSCENE/BACKGROUND"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 404.0
+offset_right = 962.0
+offset_bottom = 637.0
+theme_override_constants/separation = 12
+
+[node name="Rank1Container" type="HBoxContainer" parent="RANKSCENE/BACKGROUND/RankingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Rank1Label" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank1Container"]
+visible = false
+layout_mode = 2
+
+[node name="Player1Name" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank1Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vod63")
+theme_override_font_sizes/font_size = 35
+
+[node name="Player1Score" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank1Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vod63")
+theme_override_font_sizes/font_size = 35
+
+[node name="Rank2Container" type="HBoxContainer" parent="RANKSCENE/BACKGROUND/RankingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Rank2Label" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank2Container"]
+visible = false
+layout_mode = 2
+
+[node name="Player2Name" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank2Container"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_414vm")
+theme_override_font_sizes/font_size = 35
+
+[node name="Player2Score" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank2Container"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_414vm")
+theme_override_font_sizes/font_size = 40
+
+[node name="Rank3Container" type="HBoxContainer" parent="RANKSCENE/BACKGROUND/RankingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Rank3Label" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank3Container"]
+visible = false
+layout_mode = 2
+
+[node name="Player3Name" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank3Container"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_7283n")
+theme_override_font_sizes/font_size = 35
+
+[node name="Player3Score" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank3Container"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_7283n")
+theme_override_font_sizes/font_size = 40
+
+[node name="Rank4Container" type="HBoxContainer" parent="RANKSCENE/BACKGROUND/RankingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Rank4Label" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank4Container"]
+visible = false
+layout_mode = 2
+
+[node name="Player4Name" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank4Container"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_vgf5a")
+theme_override_font_sizes/font_size = 35
+
+[node name="Player4Score" type="Label" parent="RANKSCENE/BACKGROUND/RankingsContainer/Rank4Container"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_vgf5a")
+theme_override_font_sizes/font_size = 40
+
+[node name="TextureRect" type="TextureRect" parent="RANKSCENE/BACKGROUND"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_qxusx")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -8.0
+offset_right = 89.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_fq7x8")
+expand_mode = 1
+flip_v = true
+
+[node name="PlayAgainButton" type="Button" parent="RANKSCENE"]
+layout_mode = 0
+offset_left = 890.0
+offset_top = 589.0
+offset_right = 1138.0
+offset_bottom = 691.0
+theme = ExtResource("3_7q5d7")
+
+[node name="MainMenuButton" type="Button" parent="RANKSCENE"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 10.0
+offset_right = 298.0
+offset_bottom = 82.0
+theme = ExtResource("4_ca6af")
+
+[connection signal="pressed" from="RANKSCENE/PlayAgainButton" to="RANKSCENE" method="_on_play_again_pressed"]
+[connection signal="pressed" from="RANKSCENE/MainMenuButton" to="RANKSCENE" method="_on_main_menu_pressed"]

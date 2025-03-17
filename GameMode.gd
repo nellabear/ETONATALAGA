@@ -5,7 +5,7 @@ signal game_settings_selected(difficulty, question_count)
 enum Difficulty {EASY, AVERAGE, HARD}
 
 var selected_difficulty = Difficulty.EASY
-var question_count = 10 # Default value
+var question_count = 5 # Default value
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,8 +25,8 @@ func _ready():
 	
 	# Set up question spinbox (max 300 as per requirements)
 	$QuestionSpinBox.min_value = 5
-	$QuestionSpinBox.max_value = 300
-	$QuestionSpinBox.value = 10
+	$QuestionSpinBox.max_value = 30
+	$QuestionSpinBox.value = 5
 
 # Handle difficulty button pressed
 func _on_difficulty_button_pressed(difficulty):

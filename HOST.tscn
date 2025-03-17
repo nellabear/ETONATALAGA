@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhgi6q8o0ngri"]
+[gd_scene load_steps=13 format=3 uid="uid://bhgi6q8o0ngri"]
 
 [ext_resource type="Script" path="res://GameMode.gd" id="1_yjaaw"]
 [ext_resource type="Texture2D" uid="uid://bslhy0h1o3obs" path="res://PICTURES/BACKGROUNDS/landscape (16).png" id="2_0uiau"]
+[ext_resource type="Script" path="res://hostbackbuttoaa.gd" id="4_0h5ag"]
 [ext_resource type="Texture2D" uid="uid://jg5d8rah3xin" path="res://landscape (2500 x 1080 px) (2500 x 600 px) (3).png" id="7_e00i5"]
 [ext_resource type="Texture2D" uid="uid://bdc831bvj0yo4" path="res://PICTURES/9.png" id="7_exepl"]
 [ext_resource type="Theme" uid="uid://dkib15q1kbbj3" path="res://PICTURES/BUTTONS/STARTBUTTON.tres" id="7_ufubj"]
@@ -42,6 +43,7 @@ offset_bottom = 102.0
 texture_normal = ExtResource("7_e00i5")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("4_0h5ag")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="GameMode"]
 layout_mode = 1
@@ -141,7 +143,7 @@ vertical_alignment = 1
 stream = ExtResource("8_244bo")
 autoplay = true
 
-[connection signal="pressed" from="GameMode/BACK BUTTON" to="GameMode" method="_on_back_button_pressed"]
+[connection signal="pressed" from="GameMode/BACK BUTTON" to="GameMode/BACK BUTTON" method="_on_pressed"]
 [connection signal="pressed" from="GameMode/EASY" to="GameMode" method="_on_easy_pressed"]
 [connection signal="pressed" from="GameMode/AVERAGE" to="GameMode" method="_on_average_pressed"]
 [connection signal="pressed" from="GameMode/HARD" to="GameMode" method="_on_hard_pressed"]

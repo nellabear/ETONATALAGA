@@ -2,23 +2,18 @@ extends Control
 
 signal names_registered(player_names)
 
-# Access to global player count from previous scene
-var player_count = 1
-var player_names = []
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Get player count from a singleton or autoload
-	# For example: player_count = GameData.player_count
+	var player_count = GameData.player_count
 	
 	# Set up input fields based on player count
 	_setup_name_inputs()
 	
-	# Connect continue button
-	$ContinueButton.connect("pressed", _on_continue_button_pressed)
 
 # Setup name input fields based on player count
 func _setup_name_inputs():
+	var player_count = GameData.player_count
 	# Hide all name inputs initially
 	for i in range(1, 5):
 		var input_container = $VBoxContainer/NameInputs.get_node("Player" + str(i) + "Container")
@@ -36,7 +31,8 @@ func _setup_name_inputs():
 # Handle continue button pressed - collect names and move to game selection
 func _on_continue_button_pressed():
 	# Collect player names
-	player_names.clear()
+	var player_names = []
+	var player_count = GameData.player_count
 	
 	for i in range(1, player_count + 1):
 		var input_container = $VBoxContainer/NameInputs.get_node("Player" + str(i) + "Container")
@@ -51,6 +47,7 @@ func _on_continue_button_pressed():
 	
 	# Store names in a singleton or autoload
 	# For example: GameData.player_names = player_names
+	GameData.player_names = player_names
 	
 	emit_signal("names_registered", player_names)
 	

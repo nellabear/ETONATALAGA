@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://byw1hev1pi7wh"]
+[gd_scene load_steps=11 format=3 uid="uid://byw1hev1pi7wh"]
 
 [ext_resource type="Script" path="res://nameselectionnn.gd" id="1_ug5jk"]
 [ext_resource type="Texture2D" uid="uid://bxgqtxj2namfr" path="res://ENTER NAME (2).png" id="2_2batu"]
 [ext_resource type="FontFile" uid="uid://buvw3iifvn4n7" path="res://PICTURES/FONT/Happy School.ttf" id="3_wgel7"]
 [ext_resource type="Texture2D" uid="uid://jg5d8rah3xin" path="res://landscape (2500 x 1080 px) (2500 x 600 px) (3).png" id="3_x0j8n"]
 [ext_resource type="Theme" uid="uid://bgqig27qthhma" path="res://PICTURES/BUTTONS/PROCEED.tres" id="4_76brs"]
-[ext_resource type="Script" path="res://back_button.gd" id="4_hkpb4"]
+[ext_resource type="Script" path="res://NAMESELECTIONBACKBUTTON.gd" id="6_3sdtt"]
+[ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="7_m6h0d"]
 
 [sub_resource type="FontVariation" id="FontVariation_m3qlj"]
 base_font = ExtResource("3_wgel7")
@@ -140,7 +141,11 @@ offset_bottom = 102.0
 texture_normal = ExtResource("3_x0j8n")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("4_hkpb4")
+script = ExtResource("6_3sdtt")
+
+[node name="MasterMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_m6h0d")
+autoplay = true
 
 [connection signal="pressed" from="NAMESELECTION/ContinueButton" to="NAMESELECTION" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="BACK BUTTON" to="BACK BUTTON" method="_on_pressed"]
