@@ -20,7 +20,7 @@ var current_quiz: IQuizQuestion:
 @onready var Iquestion_audio: AudioStreamPlayer = $Content/IQuestionInfo/DImageHolder/IQuestionAudio
 @onready var answer_input: LineEdit = $Content/IQuestionHolder/AnswerInput
 @onready var correct_answer_label: Label = $Content/IQuestionHolder/AnswerInput/CorrectAnswerLabel
-@onready var score_container: HBoxContainer = $Content/ScoreContainer
+@onready var score_container: VBoxContainer = $Content/ScoreContainer
 @onready var score_label: Label = $Content/ScoreContainer/ScoreLabel
 @onready var hint_label: Button = $Content/IQuestionHolder/HintLabel
 
@@ -49,7 +49,7 @@ func _ready() -> void:
 func setup_player_scores():
 	# Create score labels for each player
 	for i in range(GameData.player_count):
-		var score_row = HBoxContainer.new()
+		var score_row = VBoxContainer.new()
 		score_row.name = "PlayerRow" + str(i)
 		
 		var name_label = Label.new()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bsgtu3v3m5j7j"]
+[gd_scene load_steps=29 format=3 uid="uid://djqfodw8m2jhb"]
 
 [ext_resource type="Script" path="res://IDENTIFICATION/ISCRIPTS/ICONTROLLERS/IGAME_CONTROLLER.gd" id="1_of6dv"]
 [ext_resource type="Texture2D" uid="uid://c1rgibjnb815c" path="res://MultiplayerScripts/14.png" id="2_588ab"]
@@ -269,11 +269,10 @@ offset_bottom = 146.0
 [node name="ResponseTimeLabel" type="Label" parent="IDENTIFICATION/Content/ResponseTimesContainer"]
 layout_mode = 2
 
-[node name="ScoreContainer" type="HBoxContainer" parent="IDENTIFICATION/Content"]
-offset_left = 161.0
-offset_top = 24.0
-offset_right = 464.0
-offset_bottom = 173.0
+[node name="ScoreContainer" type="VBoxContainer" parent="IDENTIFICATION/Content"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="ScoreLabel" type="Label" parent="IDENTIFICATION/Content/ScoreContainer"]
 layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c0xnruv0teun6"]
+[gd_scene load_steps=27 format=3 uid="uid://cydbpueuf5o3k"]
 
 [ext_resource type="Script" path="res://TRUEORFALSE/CONTROLLERS/GAME_CONTROLLER.gd" id="1_0wfp7"]
 [ext_resource type="Texture2D" uid="uid://c1rgibjnb815c" path="res://MultiplayerScripts/14.png" id="2_btxro"]
@@ -254,11 +254,10 @@ offset_bottom = 194.0
 [node name="ResponseTimeLabel" type="Label" parent="TRUEorFALSE/Content/ResponseTimesContainer"]
 layout_mode = 2
 
-[node name="ScoreContainer" type="HBoxContainer" parent="TRUEorFALSE/Content"]
-offset_left = 18.0
-offset_top = 13.0
-offset_right = 321.0
-offset_bottom = 174.0
+[node name="ScoreContainer" type="VBoxContainer" parent="TRUEorFALSE/Content"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="ScoreLabel" type="Label" parent="TRUEorFALSE/Content/ScoreContainer"]
 layout_mode = 2

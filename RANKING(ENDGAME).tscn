@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://0dikvis7cd6w"]
+[gd_scene load_steps=13 format=3 uid="uid://dq035a40qxsnm"]
 
 [ext_resource type="Texture2D" uid="uid://cc4evoelljs80" path="res://landscape (12).png" id="1_5xb5r"]
 [ext_resource type="Script" path="res://rankscene.gd" id="1_no3ix"]

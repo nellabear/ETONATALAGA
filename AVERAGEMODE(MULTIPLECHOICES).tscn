@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://q7qbsa7fi7lj"]
+[gd_scene load_steps=26 format=3 uid="uid://74dhmoriwmmg"]
 
 [ext_resource type="Script" path="res://MULTILPLECHOICE/MSCRIPTS/MCONTROLLERS/MGAME_CONTROLLER.gd" id="1_blsmx"]
 [ext_resource type="Texture2D" uid="uid://c1rgibjnb815c" path="res://MultiplayerScripts/14.png" id="2_dfarq"]
@@ -283,12 +283,10 @@ label_settings = SubResource("LabelSettings_0hdwr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScoreContainer" type="HBoxContainer" parent="MULTIPLECHOICE/Content"]
+[node name="ScoreContainer" type="VBoxContainer" parent="MULTIPLECHOICE/Content"]
 layout_mode = 0
-offset_left = 127.0
-offset_top = 24.0
-offset_right = 430.0
-offset_bottom = 185.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="ScoreLabel" type="Label" parent="MULTIPLECHOICE/Content/ScoreContainer"]
 layout_mode = 2

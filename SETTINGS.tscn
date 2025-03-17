@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6wbiaixe8ola"]
+[gd_scene load_steps=7 format=3 uid="uid://b7oculqcxlwyu"]
 
 [ext_resource type="Script" path="res://audio_manager.gd" id="1_02ts3"]
 [ext_resource type="Texture2D" uid="uid://b1lbdd3uj2dmj" path="res://PICTURES/landscape (13).png" id="2_xmxsw"]
