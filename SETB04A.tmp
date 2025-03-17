@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6wbiaixe8ola"]
+
+[ext_resource type="Script" path="res://VOLUME.gd" id="1_mldmc"]
+[ext_resource type="Texture2D" uid="uid://fwqnmldq5n46" path="res://PICTURES/landscape (8).png" id="1_tvh36"]
+[ext_resource type="Texture2D" uid="uid://jg5d8rah3xin" path="res://landscape (2500 x 1080 px) (2500 x 600 px) (3).png" id="2_lsuuv"]
+[ext_resource type="Script" path="res://back_button.gd" id="3_3n7pj"]
+[ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="5_rw0bn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_mldmc")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tvh36")
+expand_mode = 1
+
+[node name="BACK BUTTON" type="TextureButton" parent="Control/TextureRect"]
+layout_mode = 0
+offset_left = -67.0
+offset_top = 6.0
+offset_right = 333.0
+offset_bottom = 102.0
+texture_normal = ExtResource("2_lsuuv")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_3n7pj")
+
+[node name="CheckBox" type="CheckBox" parent="Control"]
+layout_mode = 2
+offset_left = 627.0
+offset_top = 410.0
+offset_right = 712.0
+offset_bottom = 471.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_rw0bn")
+
+[node name="VolumeSettings" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -57.0
+offset_right = 157.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="BackgroundMusic" type="VBoxContainer" parent="Control/VolumeSettings"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="Control/VolumeSettings/BackgroundMusic"]
+layout_mode = 2
+
+[node name="SoundEffects" type="VBoxContainer" parent="Control/VolumeSettings"]
+layout_mode = 2
+
+[node name="soundeffects" type="HSlider" parent="Control/VolumeSettings/SoundEffects"]
+layout_mode = 2
+
+[connection signal="pressed" from="Control/TextureRect/BACK BUTTON" to="Control/TextureRect/BACK BUTTON" method="_on_pressed"]
+[connection signal="toggled" from="Control/CheckBox" to="Control" method="_on_check_box_toggled"]
+[connection signal="value_changed" from="Control/VolumeSettings/BackgroundMusic/HSlider" to="Control" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Control/VolumeSettings/SoundEffects/soundeffects" to="Control" method="_on_soundeffects_value_changed"]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MQuizQuestion" load_steps=3 format=3 uid="uid://d1rx0ku126u6q"]
+
+[ext_resource type="Script" path="res://MULTILPLECHOICE/MSCRIPTS/MRESOURCE/MQUESTION.gd" id="1_cedbd"]
+[ext_resource type="Texture2D" uid="uid://dt0wyprt8xyby" path="res://MULTILPLECHOICE/MUI/41.png" id="1_jrh78"]
+
+[resource]
+script = ExtResource("1_cedbd")
+Mquestion_info = ""
+Mtype = 1
+Mquestion_image = ExtResource("1_jrh78")
+Moptions = Array[String](["Anton van Leeuwenhoek", "Robert Hooke", "Rudolf Virchow", "Theodor Schwann"])
+Mcorrect = "Robert Hooke"

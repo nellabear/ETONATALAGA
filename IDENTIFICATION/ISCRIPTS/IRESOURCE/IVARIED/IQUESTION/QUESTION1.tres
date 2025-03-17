@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="IQuizQuestion" load_steps=3 format=3 uid="uid://bqshqmgn186bj"]
+
+[ext_resource type="Texture2D" uid="uid://dgrkr6ia4hsfv" path="res://IDENTIFICATION/IUI/50.png" id="1_gq1pv"]
+[ext_resource type="Script" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/IQUESTION.gd" id="1_hfyu7"]
+
+[resource]
+script = ExtResource("1_hfyu7")
+Iquestion_info = ""
+Itype = 1
+Iquestion_image = ExtResource("1_gq1pv")
+Ioptions = Array[String]([])
+Icorrect = "Robert Hooke"

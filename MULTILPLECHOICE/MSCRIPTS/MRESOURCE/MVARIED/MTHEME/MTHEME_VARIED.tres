@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MQuizTheme" load_steps=8 format=3 uid="uid://bbkl1c3104ohg"]
+
+[ext_resource type="Script" path="res://MULTILPLECHOICE/MSCRIPTS/MRESOURCE/MTHEME.gd" id="1_5qlie"]
+[ext_resource type="Script" path="res://MULTILPLECHOICE/MSCRIPTS/MRESOURCE/MQUESTION.gd" id="2_fl03v"]
+[ext_resource type="Resource" uid="uid://bgn5dpxaorcfv" path="res://MULTILPLECHOICE/MSCRIPTS/MRESOURCE/MVARIED/MQUESTION/MQUESTION1.tres" id="3_hgkwm"]
+[ext_resource type="Resource" uid="uid://d1rx0ku126u6q" path="res://MULTILPLECHOICE/MSCRIPTS/MRESOURCE/MVARIED/MQUESTION/MQUESTION2.tres" id="4_krbqj"]
+[ext_resource type="Resource" uid="uid://oofli3gpe0h4" path="res://MULTILPLECHOICE/MSCRIPTS/MRESOURCE/MVARIED/MQUESTION/MQUESTION3.tres" id="5_u72fd"]
+[ext_resource type="Resource" uid="uid://dqeukbjinle3w" path="res://MULTILPLECHOICE/MSCRIPTS/MRESOURCE/MVARIED/MQUESTION/MQUESTION4.tres" id="6_ahmxe"]
+[ext_resource type="Resource" uid="uid://cln2mqi3w3ckg" path="res://MULTILPLECHOICE/MSCRIPTS/MRESOURCE/MVARIED/MQUESTION/MQUESTION5.tres" id="7_drogx"]
+
+[resource]
+script = ExtResource("1_5qlie")
+Mtheme = Array[ExtResource("2_fl03v")]([ExtResource("3_hgkwm"), ExtResource("4_krbqj"), ExtResource("5_u72fd"), ExtResource("6_ahmxe"), ExtResource("7_drogx")])

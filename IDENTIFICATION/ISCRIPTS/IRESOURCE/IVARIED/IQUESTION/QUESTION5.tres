@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="IQuizQuestion" load_steps=3 format=3 uid="uid://cilytv4wqrm58"]
+
+[ext_resource type="Texture2D" uid="uid://dce7ofi7it3sr" path="res://IDENTIFICATION/IUI/54.png" id="1_dl08s"]
+[ext_resource type="Script" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/IQUESTION.gd" id="1_hs2lt"]
+
+[resource]
+script = ExtResource("1_hs2lt")
+Iquestion_info = ""
+Itype = 1
+Iquestion_image = ExtResource("1_dl08s")
+Ioptions = Array[String]([])
+Icorrect = "Photosynthesis"

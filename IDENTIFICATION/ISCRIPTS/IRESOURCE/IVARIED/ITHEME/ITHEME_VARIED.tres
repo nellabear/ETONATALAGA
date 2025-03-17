@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="IQuizTheme" load_steps=8 format=3 uid="uid://dotcl7ddmtfil"]
+
+[ext_resource type="Script" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/IQUESTION.gd" id="1_8g1ro"]
+[ext_resource type="Script" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/ITHEME.gd" id="2_71eqc"]
+[ext_resource type="Resource" uid="uid://bqshqmgn186bj" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/IVARIED/IQUESTION/QUESTION1.tres" id="2_rffyq"]
+[ext_resource type="Resource" uid="uid://2s652bkf82gc" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/IVARIED/IQUESTION/QUESTION2.tres" id="3_ejr7q"]
+[ext_resource type="Resource" uid="uid://28osgwuwqpms" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/IVARIED/IQUESTION/QUESTION3.tres" id="4_veuph"]
+[ext_resource type="Resource" uid="uid://coddgsw4k6rr1" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/IVARIED/IQUESTION/QUESTION4.tres" id="5_mh7ce"]
+[ext_resource type="Resource" uid="uid://cilytv4wqrm58" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/IVARIED/IQUESTION/QUESTION5.tres" id="6_7vwax"]
+
+[resource]
+script = ExtResource("2_71eqc")
+Itheme = Array[ExtResource("1_8g1ro")]([ExtResource("2_rffyq"), ExtResource("3_ejr7q"), ExtResource("4_veuph"), ExtResource("5_mh7ce"), ExtResource("6_7vwax")])

@@ -1,0 +1,231 @@
+[gd_scene load_steps=25 format=3 uid="uid://c0xnruv0teun6"]
+
+[ext_resource type="Script" path="res://TRUEORFALSE/CONTROLLERS/GAME_CONTROLLER.gd" id="1_0wfp7"]
+[ext_resource type="Texture2D" uid="uid://c1rgibjnb815c" path="res://MultiplayerScripts/14.png" id="2_btxro"]
+[ext_resource type="Resource" uid="uid://brfx5ca3getbh" path="res://TRUEORFALSE/SCRIPTS/RESOURCE/VARIED/THEME/THEME_VARIED.tres" id="2_rm8ms"]
+[ext_resource type="Texture2D" uid="uid://clowp872iqadl" path="res://MultiplayerScripts/15.png" id="3_hi0w8"]
+[ext_resource type="Texture2D" uid="uid://cul8dknmc7nuy" path="res://PICTURES/landscape (12).png" id="3_xs2d6"]
+[ext_resource type="Texture2D" uid="uid://bfuegrdugftim" path="res://TRUEORFALSE/UI/33.png" id="4_4ymp2"]
+[ext_resource type="Texture2D" uid="uid://br0xas1xtrxxf" path="res://MultiplayerScripts/16.png" id="4_unv27"]
+[ext_resource type="Texture2D" uid="uid://cyetkdmwmes45" path="res://MultiplayerScripts/17.png" id="5_fggme"]
+[ext_resource type="FontFile" uid="uid://buvw3iifvn4n7" path="res://PICTURES/FONT/Happy School.ttf" id="5_k8do7"]
+[ext_resource type="AudioStream" uid="uid://yq4dmn5aipaf" path="res://AUDIO/CORRECT.MP3" id="8_ahmb7"]
+[ext_resource type="AudioStream" uid="uid://doy1evnpp8lu5" path="res://AUDIO/WRONG.mp3" id="9_df8i3"]
+[ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="12_rkoya"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6o7s4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1le4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6adlu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mcpe4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kh50g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yns8o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xewv2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_30iit"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bbvkk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l6rk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmmd2"]
+
+[sub_resource type="FontVariation" id="FontVariation_jn7pf"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TRUEorFALSE" type="CanvasLayer" parent="."]
+script = ExtResource("1_0wfp7")
+quiz = ExtResource("2_rm8ms")
+color_right = Color(0, 0.796078, 0, 1)
+color_wrong = Color(0.870588, 0, 0, 1)
+
+[node name="Content" type="Control" parent="TRUEorFALSE"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Background" type="TextureRect" parent="TRUEorFALSE/Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -3.0
+offset_right = 71.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xs2d6")
+expand_mode = 1
+
+[node name="QuestionInfo" type="VBoxContainer" parent="TRUEorFALSE/Content"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -369.0
+offset_top = 35.0
+offset_right = 404.0
+offset_bottom = 187.0
+grow_horizontal = 2
+
+[node name="QuestionText" type="Label" parent="TRUEorFALSE/Content/QuestionInfo"]
+visible = false
+layout_mode = 2
+
+[node name="ImageHolder" type="Panel" parent="TRUEorFALSE/Content/QuestionInfo"]
+layout_mode = 2
+
+[node name="QuestionImage" type="TextureRect" parent="TRUEorFALSE/Content/QuestionInfo/ImageHolder"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -107.0
+offset_right = 109.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_4ymp2")
+expand_mode = 3
+
+[node name="QuestionVideo" type="VideoStreamPlayer" parent="TRUEorFALSE/Content/QuestionInfo/ImageHolder"]
+layout_mode = 2
+offset_top = -31.0
+offset_right = 779.0
+offset_bottom = -31.0
+
+[node name="QuestionAudio" type="AudioStreamPlayer" parent="TRUEorFALSE/Content/QuestionInfo/ImageHolder"]
+
+[node name="QuestionHolder" type="HBoxContainer" parent="TRUEorFALSE/Content"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 275.0
+offset_right = 988.0
+offset_bottom = 616.0
+theme_override_constants/separation = 21
+
+[node name="Button" type="Button" parent="TRUEorFALSE/Content/QuestionHolder"]
+custom_minimum_size = Vector2(387, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_k8do7")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6o7s4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_i1le4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6adlu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mcpe4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_kh50g")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yns8o")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xewv2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_30iit")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bbvkk")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_7l6rk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qmmd2")
+text = "TRUE"
+
+[node name="Button2" type="Button" parent="TRUEorFALSE/Content/QuestionHolder"]
+custom_minimum_size = Vector2(387, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_k8do7")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6o7s4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_i1le4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6adlu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mcpe4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_kh50g")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yns8o")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xewv2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_30iit")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bbvkk")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_7l6rk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qmmd2")
+text = "FALSE"
+
+[node name="PLAYERS" type="VBoxContainer" parent="TRUEorFALSE/Content"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 15.0
+offset_right = 218.0
+offset_bottom = 227.0
+theme_override_constants/separation = -7
+
+[node name="TextureRect" type="TextureRect" parent="TRUEorFALSE/Content/PLAYERS"]
+custom_minimum_size = Vector2(0, 43)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_btxro")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="TRUEorFALSE/Content/PLAYERS"]
+custom_minimum_size = Vector2(0, 43)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("3_hi0w8")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="TRUEorFALSE/Content/PLAYERS"]
+custom_minimum_size = Vector2(0, 43)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("4_unv27")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="TRUEorFALSE/Content/PLAYERS"]
+custom_minimum_size = Vector2(0, 43)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("5_fggme")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="PlayerTurnLabel" type="Label" parent="TRUEorFALSE/Content"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -245.0
+offset_top = -84.0
+offset_right = 245.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="AudioCorrect" type="AudioStreamPlayer" parent="TRUEorFALSE"]
+stream = ExtResource("8_ahmb7")
+
+[node name="AudioIncorrect" type="AudioStreamPlayer" parent="TRUEorFALSE"]
+stream = ExtResource("9_df8i3")
+
+[node name="QuestionTimer" type="Timer" parent="TRUEorFALSE"]
+wait_time = 10.0
+one_shot = true
+
+[node name="QuestionLabel" type="Label" parent="TRUEorFALSE/QuestionTimer"]
+offset_left = 1007.0
+offset_top = 8.0
+offset_right = 1113.0
+offset_bottom = 50.0
+scale = Vector2(0.969978, 0.972193)
+theme_override_fonts/font = SubResource("FontVariation_jn7pf")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="MasterMusic" type="AudioStreamPlayer" parent="TRUEorFALSE"]
+stream = ExtResource("12_rkoya")
+autoplay = true
+
+[connection signal="timeout" from="TRUEorFALSE/QuestionTimer" to="TRUEorFALSE" method="_on_question_timer_timeout"]

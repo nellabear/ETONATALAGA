@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6wbiaixe8ola"]
+
+[ext_resource type="Script" path="res://audio_manager.gd" id="1_02ts3"]
+[ext_resource type="Texture2D" uid="uid://b1lbdd3uj2dmj" path="res://PICTURES/landscape (13).png" id="2_xmxsw"]
+[ext_resource type="Script" path="res://settingsbackbutton.gd" id="3_d4qyb"]
+[ext_resource type="AudioStream" uid="uid://yq4dmn5aipaf" path="res://AUDIO/CORRECT.MP3" id="5_nrxqm"]
+[ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="5_rw0bn"]
+[ext_resource type="AudioStream" uid="uid://doy1evnpp8lu5" path="res://AUDIO/WRONG.mp3" id="6_arskm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_02ts3")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xmxsw")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="Control/TextureRect"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 870.0
+offset_top = 126.0
+offset_right = 912.0
+offset_bottom = 166.0
+script = ExtResource("3_d4qyb")
+
+[node name="Mute" type="CheckBox" parent="Control"]
+layout_mode = 2
+offset_left = 591.0
+offset_top = 423.0
+offset_right = 615.0
+offset_bottom = 447.0
+scale = Vector2(2.00872, 1.64162)
+
+[node name="VolumeSettings" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -57.0
+offset_right = 157.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 96
+
+[node name="BackgroundMusic" type="VBoxContainer" parent="Control/VolumeSettings"]
+layout_mode = 2
+
+[node name="Master" type="HSlider" parent="Control/VolumeSettings/BackgroundMusic"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="SoundEffects" type="VBoxContainer" parent="Control/VolumeSettings"]
+layout_mode = 2
+
+[node name="SFX" type="HSlider" parent="Control/VolumeSettings/SoundEffects"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="AudioCorrect" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_nrxqm")
+
+[node name="AudioIncorrect" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("6_arskm")
+
+[node name="MasterMusic" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_rw0bn")
+autoplay = true
+
+[connection signal="pressed" from="Control/TextureRect/Button" to="Control/TextureRect/Button" method="_on_pressed"]
+[connection signal="toggled" from="Control/Mute" to="Control" method="_on_mute_toggled"]
+[connection signal="value_changed" from="Control/VolumeSettings/BackgroundMusic/Master" to="Control" method="_on_master_value_changed"]
+[connection signal="value_changed" from="Control/VolumeSettings/SoundEffects/SFX" to="Control" method="_on_sfx_value_changed"]

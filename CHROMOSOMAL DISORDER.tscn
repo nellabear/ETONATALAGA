@@ -1,0 +1,246 @@
+[gd_scene load_steps=26 format=3 uid="uid://dcalw3q2kdibd"]
+
+[ext_resource type="Texture2D" uid="uid://8tb2oswm01vm" path="res://landscape (3).png" id="1_uh6b1"]
+[ext_resource type="Texture2D" uid="uid://3qtod21jac4x" path="res://PICTURES/CHROMOSOMAL DISORDERS/114.png" id="2_sycys"]
+[ext_resource type="Texture2D" uid="uid://c7wlttyesubub" path="res://PICTURES/CHROMOSOMAL DISORDERS/115.png" id="3_0uw3f"]
+[ext_resource type="Texture2D" uid="uid://401fm22phlt8" path="res://TRUEORFALSE/UI/20.png" id="3_r0fm6"]
+[ext_resource type="Texture2D" uid="uid://ddmlut16j57ck" path="res://PICTURES/CHROMOSOMAL DISORDERS/116.png" id="4_0m0yp"]
+[ext_resource type="Script" path="res://TOPICSBACKBUTTON.gd" id="4_ux3gc"]
+[ext_resource type="Script" path="res://chromosomaldisorder.gd" id="5_1ce4x"]
+[ext_resource type="Texture2D" uid="uid://c0s1phxj0yuc7" path="res://PICTURES/CHROMOSOMAL DISORDERS/117.png" id="5_sd1ev"]
+[ext_resource type="Texture2D" uid="uid://bqahq77hln6y0" path="res://PICTURES/CHROMOSOMAL DISORDERS/118.png" id="6_ohi52"]
+[ext_resource type="Texture2D" uid="uid://cdy4xvwu05x60" path="res://PICTURES/CHROMOSOMAL DISORDERS/119.png" id="7_p6vjp"]
+[ext_resource type="Texture2D" uid="uid://dtjghfqtwjcix" path="res://PICTURES/CHROMOSOMAL DISORDERS/120.png" id="8_8gobm"]
+[ext_resource type="Texture2D" uid="uid://dr08xaqtguwd1" path="res://PICTURES/CHROMOSOMAL DISORDERS/121.png" id="9_lhb5i"]
+[ext_resource type="Texture2D" uid="uid://d0gnaqkensa3p" path="res://PICTURES/CHROMOSOMAL DISORDERS/122.png" id="10_dkvt3"]
+[ext_resource type="Texture2D" uid="uid://dsjf0rdxtn2kg" path="res://PICTURES/CHROMOSOMAL DISORDERS/123.png" id="11_x22ke"]
+[ext_resource type="Texture2D" uid="uid://dcgeddbafb72a" path="res://PICTURES/CHROMOSOMAL DISORDERS/124.png" id="12_ipxf6"]
+[ext_resource type="Texture2D" uid="uid://civhh65hiluan" path="res://PICTURES/CHROMOSOMAL DISORDERS/125.png" id="13_3qe1q"]
+[ext_resource type="Texture2D" uid="uid://c0ed3efvg8ygu" path="res://PICTURES/CHROMOSOMAL DISORDERS/126.png" id="14_lo4xa"]
+[ext_resource type="Texture2D" uid="uid://dnllvufsnghxb" path="res://PICTURES/CHROMOSOMAL DISORDERS/127.png" id="15_3pf0y"]
+[ext_resource type="Texture2D" uid="uid://cn2lnb58gktb0" path="res://PICTURES/CHROMOSOMAL DISORDERS/128.png" id="16_g23ia"]
+[ext_resource type="Texture2D" uid="uid://s7wa3o31f5yh" path="res://PICTURES/CHROMOSOMAL DISORDERS/129.png" id="17_f18hp"]
+[ext_resource type="Texture2D" uid="uid://bqnwr2au1xebi" path="res://PICTURES/CHROMOSOMAL DISORDERS/130.png" id="18_fij1s"]
+[ext_resource type="Texture2D" uid="uid://ppj5yxy3lf80" path="res://PICTURES/CHROMOSOMAL DISORDERS/131.png" id="19_bf57t"]
+[ext_resource type="Texture2D" uid="uid://cyl3s5dsdxj7h" path="res://PICTURES/CHROMOSOMAL DISORDERS/132.png" id="20_k6ggg"]
+[ext_resource type="Texture2D" uid="uid://bueinr6pedx1q" path="res://PICTURES/CHROMOSOMAL DISORDERS/133.png" id="21_qxofi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpnme"]
+size = Vector2(790.5, 458)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uh6b1")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="Control/Background"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 112.0
+offset_right = 1016.0
+offset_bottom = 650.0
+
+[node name="chromosomaldisorder" type="Node2D" parent="Control/Background/Panel"]
+
+[node name="TextureRect" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 36.0
+offset_top = 36.0
+offset_right = 826.0
+offset_bottom = 493.0
+texture = ExtResource("2_sycys")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 36.0
+offset_top = 522.0
+offset_right = 826.0
+offset_bottom = 979.0
+texture = ExtResource("3_0uw3f")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 38.0
+offset_top = 1008.0
+offset_right = 828.0
+offset_bottom = 1465.0
+texture = ExtResource("4_0m0yp")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 38.0
+offset_top = 1496.0
+offset_right = 828.0
+offset_bottom = 1953.0
+texture = ExtResource("5_sd1ev")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 38.0
+offset_top = 1982.0
+offset_right = 828.0
+offset_bottom = 2439.0
+texture = ExtResource("6_ohi52")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 41.0
+offset_top = 2470.0
+offset_right = 831.0
+offset_bottom = 2927.0
+texture = ExtResource("7_p6vjp")
+expand_mode = 1
+
+[node name="TextureRect7" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 41.0
+offset_top = 2957.0
+offset_right = 831.0
+offset_bottom = 3414.0
+texture = ExtResource("8_8gobm")
+expand_mode = 1
+
+[node name="TextureRect8" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 40.0
+offset_top = 3450.0
+offset_right = 830.0
+offset_bottom = 3907.0
+texture = ExtResource("9_lhb5i")
+expand_mode = 1
+
+[node name="TextureRect9" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 39.0
+offset_top = 3943.0
+offset_right = 829.0
+offset_bottom = 4400.0
+texture = ExtResource("10_dkvt3")
+expand_mode = 1
+
+[node name="TextureRect10" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 39.0
+offset_top = 4437.0
+offset_right = 829.0
+offset_bottom = 4894.0
+texture = ExtResource("11_x22ke")
+expand_mode = 1
+
+[node name="TextureRect11" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 40.0
+offset_top = 4933.0
+offset_right = 830.0
+offset_bottom = 5390.0
+texture = ExtResource("12_ipxf6")
+expand_mode = 1
+
+[node name="TextureRect12" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 39.0
+offset_top = 5430.0
+offset_right = 829.0
+offset_bottom = 5887.0
+texture = ExtResource("13_3qe1q")
+expand_mode = 1
+
+[node name="TextureRect13" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 39.0
+offset_top = 5925.0
+offset_right = 829.0
+offset_bottom = 6382.0
+texture = ExtResource("14_lo4xa")
+expand_mode = 1
+
+[node name="TextureRect14" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 38.0
+offset_top = 6424.0
+offset_right = 828.0
+offset_bottom = 6881.0
+texture = ExtResource("15_3pf0y")
+expand_mode = 1
+
+[node name="TextureRect15" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 38.0
+offset_top = 6922.0
+offset_right = 828.0
+offset_bottom = 7379.0
+texture = ExtResource("16_g23ia")
+expand_mode = 1
+
+[node name="TextureRect16" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 38.0
+offset_top = 7423.0
+offset_right = 828.0
+offset_bottom = 7880.0
+texture = ExtResource("17_f18hp")
+expand_mode = 1
+
+[node name="TextureRect17" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 38.0
+offset_top = 7920.0
+offset_right = 828.0
+offset_bottom = 8377.0
+texture = ExtResource("18_fij1s")
+expand_mode = 1
+
+[node name="TextureRect18" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 38.0
+offset_top = 8420.0
+offset_right = 828.0
+offset_bottom = 8877.0
+texture = ExtResource("19_bf57t")
+expand_mode = 1
+
+[node name="TextureRect19" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 37.0
+offset_top = 8921.0
+offset_right = 827.0
+offset_bottom = 9378.0
+texture = ExtResource("20_k6ggg")
+expand_mode = 1
+
+[node name="TextureRect20" type="TextureRect" parent="Control/Background/Panel/chromosomaldisorder"]
+offset_left = 33.0
+offset_top = 9421.0
+offset_right = 823.0
+offset_bottom = 9878.0
+texture = ExtResource("21_qxofi")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_r0fm6")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="Control/TextureRect"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 100.0
+offset_top = 26.0
+offset_right = 139.0
+offset_bottom = 77.0
+script = ExtResource("4_ux3gc")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("5_1ce4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(586, 376)
+shape = SubResource("RectangleShape2D_fpnme")
+
+[connection signal="pressed" from="Control/TextureRect/Button" to="Control/TextureRect/Button" method="_on_pressed"]

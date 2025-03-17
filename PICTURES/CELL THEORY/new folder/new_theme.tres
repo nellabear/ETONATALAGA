@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://by03h3htf781y"]
+
+[ext_resource type="Texture2D" uid="uid://byxhxjbbt3ask" path="res://PICTURES/CELL THEORY/15.png" id="1_ry371"]
+
+[sub_resource type="FontVariation" id="FontVariation_g44g0"]
+
+[resource]
+default_font = SubResource("FontVariation_g44g0")
+EditorIcons/icons/TextureRect = ExtResource("1_ry371")

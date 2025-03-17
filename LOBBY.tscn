@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsyj5rp4osv58"]
+
+[ext_resource type="Script" path="res://lobby.gd" id="1_geb56"]
+[ext_resource type="Texture2D" uid="uid://cijk6cddx3rfj" path="res://PICTURES/BACKGROUNDS/landscape (11).png" id="2_sx763"]
+[ext_resource type="Script" path="res://LOBBYBACKBUTTON.gd" id="3_wmsdt"]
+[ext_resource type="FontFile" uid="uid://buvw3iifvn4n7" path="res://PICTURES/FONT/Happy School.ttf" id="3_wq21r"]
+[ext_resource type="Theme" uid="uid://bgqig27qthhma" path="res://PICTURES/BUTTONS/PROCEED.tres" id="4_4rylm"]
+[ext_resource type="Theme" uid="uid://di6svn36acl4m" path="res://PICTURES/BUTTONS/BACK.tres" id="5_6t3y3"]
+[ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="7_mi053"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Lobby" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_geb56")
+
+[node name="TextureRect" type="TextureRect" parent="Lobby"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sx763")
+expand_mode = 1
+
+[node name="room_code_label" type="Label" parent="Lobby"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -182.0
+offset_top = 39.0
+offset_right = 203.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_wq21r")
+theme_override_font_sizes/font_size = 37
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="difficulty_label" type="Label" parent="Lobby"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.5
+offset_top = -61.0
+offset_right = 176.5
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="start_button" type="Button" parent="Lobby"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 566.0
+offset_right = 1091.0
+offset_bottom = 633.0
+theme = ExtResource("4_4rylm")
+
+[node name="player_list" type="ItemList" parent="Lobby"]
+visible = false
+layout_mode = 2
+offset_left = 230.0
+offset_top = 211.0
+offset_right = 923.0
+offset_bottom = 530.0
+
+[node name="Label" type="Label" parent="Lobby/player_list"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Lobby"]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 172.0
+offset_right = 932.0
+offset_bottom = 489.0
+theme_override_constants/separation = 20
+
+[node name="PlayerList" type="Label" parent="Lobby/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wq21r")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="Button" type="Button" parent="Lobby"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 197.0
+offset_bottom = 76.0
+theme = ExtResource("5_6t3y3")
+script = ExtResource("3_wmsdt")
+
+[node name="MasterMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_mi053")
+autoplay = true
+
+[connection signal="pressed" from="Lobby/start_button" to="Lobby" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Lobby/Button" to="Lobby/Button" method="_on_pressed"]

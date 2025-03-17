@@ -1,0 +1,146 @@
+[gd_scene load_steps=10 format=3 uid="uid://byw1hev1pi7wh"]
+
+[ext_resource type="Script" path="res://nameselectionnn.gd" id="1_ug5jk"]
+[ext_resource type="Texture2D" uid="uid://bxgqtxj2namfr" path="res://ENTER NAME (2).png" id="2_2batu"]
+[ext_resource type="FontFile" uid="uid://buvw3iifvn4n7" path="res://PICTURES/FONT/Happy School.ttf" id="3_wgel7"]
+[ext_resource type="Texture2D" uid="uid://jg5d8rah3xin" path="res://landscape (2500 x 1080 px) (2500 x 600 px) (3).png" id="3_x0j8n"]
+[ext_resource type="Theme" uid="uid://bgqig27qthhma" path="res://PICTURES/BUTTONS/PROCEED.tres" id="4_76brs"]
+[ext_resource type="Script" path="res://back_button.gd" id="4_hkpb4"]
+
+[sub_resource type="FontVariation" id="FontVariation_m3qlj"]
+base_font = ExtResource("3_wgel7")
+
+[sub_resource type="FontVariation" id="FontVariation_i2olo"]
+base_font = ExtResource("3_wgel7")
+
+[sub_resource type="FontVariation" id="FontVariation_8rcjs"]
+base_font = ExtResource("3_wgel7")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NAMESELECTION" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_ug5jk")
+
+[node name="TextureRect" type="TextureRect" parent="NAMESELECTION"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2batu")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NAMESELECTION"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.0
+offset_top = -285.0
+offset_right = 183.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 31
+
+[node name="Label" type="Label" parent="NAMESELECTION/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_m3qlj")
+theme_override_font_sizes/font_size = 35
+text = "Enter Player Names"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameInputs" type="VBoxContainer" parent="NAMESELECTION/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="Player1Container" type="VBoxContainer" parent="NAMESELECTION/VBoxContainer/NameInputs"]
+layout_mode = 2
+
+[node name="Player1Label" type="Label" parent="NAMESELECTION/VBoxContainer/NameInputs/Player1Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wgel7")
+theme_override_font_sizes/font_size = 25
+text = "Player 1:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player1Name" type="LineEdit" parent="NAMESELECTION/VBoxContainer/NameInputs/Player1Container"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Player2Container" type="VBoxContainer" parent="NAMESELECTION/VBoxContainer/NameInputs"]
+layout_mode = 2
+
+[node name="Player2Label" type="Label" parent="NAMESELECTION/VBoxContainer/NameInputs/Player2Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wgel7")
+theme_override_font_sizes/font_size = 25
+text = "Player 2:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player2Name" type="LineEdit" parent="NAMESELECTION/VBoxContainer/NameInputs/Player2Container"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Player3Container" type="VBoxContainer" parent="NAMESELECTION/VBoxContainer/NameInputs"]
+layout_mode = 2
+
+[node name="Player3Label" type="Label" parent="NAMESELECTION/VBoxContainer/NameInputs/Player3Container"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_i2olo")
+theme_override_font_sizes/font_size = 25
+text = "Player 3:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player3Name" type="LineEdit" parent="NAMESELECTION/VBoxContainer/NameInputs/Player3Container"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Player4Container" type="VBoxContainer" parent="NAMESELECTION/VBoxContainer/NameInputs"]
+layout_mode = 2
+
+[node name="Player4Label" type="Label" parent="NAMESELECTION/VBoxContainer/NameInputs/Player4Container"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_8rcjs")
+theme_override_font_sizes/font_size = 25
+text = "Player 4:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player4Name" type="LineEdit" parent="NAMESELECTION/VBoxContainer/NameInputs/Player4Container"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="NAMESELECTION"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 566.0
+offset_right = 1091.0
+offset_bottom = 633.0
+theme = ExtResource("4_76brs")
+
+[node name="BACK BUTTON" type="TextureButton" parent="."]
+offset_left = -67.0
+offset_top = 6.0
+offset_right = 333.0
+offset_bottom = 102.0
+texture_normal = ExtResource("3_x0j8n")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_hkpb4")
+
+[connection signal="pressed" from="NAMESELECTION/ContinueButton" to="NAMESELECTION" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="BACK BUTTON" to="BACK BUTTON" method="_on_pressed"]

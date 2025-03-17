@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0nxus1rpvj7y"]
+
+[ext_resource type="Texture2D" uid="uid://cppuu4n2vvlrv" path="res://PICTURES/landscape (10).png" id="1_63ls3"]
+[ext_resource type="Texture2D" uid="uid://jg5d8rah3xin" path="res://landscape (2500 x 1080 px) (2500 x 600 px) (3).png" id="2_o3g3y"]
+[ext_resource type="Script" path="res://back_button.gd" id="3_qprss"]
+[ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="4_62ehu"]
+[ext_resource type="Script" path="res://LESSONS.gd" id="4_y60bn"]
+[ext_resource type="Script" path="res://cell_structure.gd" id="5_xjlrb"]
+[ext_resource type="Script" path="res://cell_cycle.gd" id="6_uawnc"]
+[ext_resource type="Script" path="res://biomolec_ules.gd" id="7_gmkk5"]
+[ext_resource type="Script" path="res://chromosomal_disorder.gd" id="8_3h1h7"]
+[ext_resource type="Script" path="res://cell_transport.gd" id="8_270jh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_63ls3")
+expand_mode = 1
+
+[node name="BACK BUTTON" type="TextureButton" parent="Control/TextureRect"]
+layout_mode = 0
+offset_left = -67.0
+offset_top = 6.0
+offset_right = 333.0
+offset_bottom = 102.0
+texture_normal = ExtResource("2_o3g3y")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_qprss")
+
+[node name="CELL THEORY" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 222.0
+offset_top = 222.0
+offset_right = 537.0
+offset_bottom = 276.0
+script = ExtResource("4_y60bn")
+
+[node name="CELL STRUCTURE" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 222.0
+offset_top = 317.0
+offset_right = 537.0
+offset_bottom = 371.0
+script = ExtResource("5_xjlrb")
+
+[node name="CELL CYCLE" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 222.0
+offset_top = 415.0
+offset_right = 537.0
+offset_bottom = 469.0
+script = ExtResource("6_uawnc")
+
+[node name="BIOMOLECULES" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 593.0
+offset_top = 414.0
+offset_right = 908.0
+offset_bottom = 468.0
+script = ExtResource("7_gmkk5")
+
+[node name="CELL TRANSPORT" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 593.0
+offset_top = 315.0
+offset_right = 908.0
+offset_bottom = 369.0
+script = ExtResource("8_270jh")
+
+[node name="CHROMOSOMAL DISORDER" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 592.0
+offset_top = 221.0
+offset_right = 907.0
+offset_bottom = 275.0
+script = ExtResource("8_3h1h7")
+
+[node name="MasterMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_62ehu")
+autoplay = true
+
+[connection signal="pressed" from="Control/TextureRect/BACK BUTTON" to="Control/TextureRect/BACK BUTTON" method="_on_pressed"]
+[connection signal="pressed" from="Control/CELL THEORY" to="Control/CELL THEORY" method="_on_pressed"]
+[connection signal="pressed" from="Control/CELL STRUCTURE" to="Control/CELL STRUCTURE" method="_on_pressed"]
+[connection signal="pressed" from="Control/CELL CYCLE" to="Control/CELL CYCLE" method="_on_pressed"]
+[connection signal="pressed" from="Control/BIOMOLECULES" to="Control/BIOMOLECULES" method="_on_pressed"]
+[connection signal="pressed" from="Control/CELL TRANSPORT" to="Control/CELL TRANSPORT" method="_on_pressed"]
+[connection signal="pressed" from="Control/CHROMOSOMAL DISORDER" to="Control/CHROMOSOMAL DISORDER" method="_on_pressed"]

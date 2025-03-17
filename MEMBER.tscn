@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://okvj5epdpuqj"]
+
+[ext_resource type="Script" path="res://Join.gd" id="1_jjglr"]
+[ext_resource type="Texture2D" uid="uid://jg5d8rah3xin" path="res://landscape (2500 x 1080 px) (2500 x 600 px) (3).png" id="2_5uh02"]
+[ext_resource type="Texture2D" uid="uid://bmt0r1evsrrob" path="res://PICTURES/BACKGROUNDS/landscape (14).png" id="2_nebjj"]
+[ext_resource type="Script" path="res://back.gd" id="3_ffjgg"]
+[ext_resource type="FontFile" uid="uid://buvw3iifvn4n7" path="res://PICTURES/FONT/Happy School.ttf" id="5_gvcbn"]
+[ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="5_u3dg5"]
+[ext_resource type="Theme" uid="uid://bosfcvjit4t7o" path="res://PICTURES/BUTTONS/NEXT.tres" id="6_utigx"]
+
+[sub_resource type="FontVariation" id="FontVariation_tw45h"]
+base_font = ExtResource("5_gvcbn")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Join" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_jjglr")
+
+[node name="TextureRect" type="TextureRect" parent="Join"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nebjj")
+expand_mode = 1
+
+[node name="BACK BUTTON" type="TextureButton" parent="Join/TextureRect"]
+layout_mode = 0
+offset_left = -67.0
+offset_top = 6.0
+offset_right = 333.0
+offset_bottom = 102.0
+texture_normal = ExtResource("2_5uh02")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_ffjgg")
+
+[node name="JoinButton" type="Button" parent="Join"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 277.0
+offset_top = -379.0
+offset_right = 364.0
+offset_bottom = -304.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("6_utigx")
+
+[node name="ErrorLabel" type="Label" parent="Join"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = 47.0
+offset_right = 144.5
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_gvcbn")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoomCodeInput" type="LineEdit" parent="Join"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 274.0
+offset_right = 814.0
+offset_bottom = 342.0
+theme_override_fonts/font = SubResource("FontVariation_tw45h")
+theme_override_font_sizes/font_size = 25
+
+[node name="MasterMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_u3dg5")
+autoplay = true
+
+[connection signal="pressed" from="Join/TextureRect/BACK BUTTON" to="Join/TextureRect/BACK BUTTON" method="_on_pressed"]
+[connection signal="pressed" from="Join/JoinButton" to="Join" method="_on_join_button_pressed"]

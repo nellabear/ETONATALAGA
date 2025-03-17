@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuizQuestion" load_steps=3 format=3 uid="uid://d0bqld1ybp8h6"]
+
+[ext_resource type="Texture2D" uid="uid://cds1tkcryg6du" path="res://TRUEORFALSE/UI/34.png" id="1_4noyg"]
+[ext_resource type="Script" path="res://TRUEORFALSE/SCRIPTS/RESOURCE/QUESTION.gd" id="1_guv54"]
+
+[resource]
+script = ExtResource("1_guv54")
+question_info = "ATOM"
+type = 1
+question_image = ExtResource("1_4noyg")
+options = Array[String](["TRUE", "FALSE"])
+correct = "FALSE"

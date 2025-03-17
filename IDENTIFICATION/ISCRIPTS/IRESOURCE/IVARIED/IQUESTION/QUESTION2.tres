@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="IQuizQuestion" load_steps=3 format=3 uid="uid://2s652bkf82gc"]
+
+[ext_resource type="Texture2D" uid="uid://cmedva6xywdn6" path="res://IDENTIFICATION/IUI/51.png" id="1_ruoyb"]
+[ext_resource type="Script" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/IQUESTION.gd" id="1_v1qef"]
+
+[resource]
+script = ExtResource("1_v1qef")
+Iquestion_info = ""
+Itype = 1
+Iquestion_image = ExtResource("1_ruoyb")
+Ioptions = Array[String]([])
+Icorrect = "Mitochondria"

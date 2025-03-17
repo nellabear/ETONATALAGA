@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbwis2mx5u51p"]
+
+[ext_resource type="Texture2D" uid="uid://bxgqtxj2namfr" path="res://ENTER NAME (2).png" id="1_bbn2c"]
+[ext_resource type="Texture2D" uid="uid://b36hya8kq4xos" path="res://14.png" id="2_b0cep"]
+[ext_resource type="Script" path="res://HOST.gd" id="3_2lv0w"]
+[ext_resource type="Texture2D" uid="uid://rpid1e185dmq" path="res://15.png" id="4_chlok"]
+[ext_resource type="Script" path="res://MEMBER.gd" id="5_mx355"]
+[ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="8_2msqk"]
+[ext_resource type="Texture2D" uid="uid://jg5d8rah3xin" path="res://landscape (2500 x 1080 px) (2500 x 600 px) (3).png" id="8_im5k7"]
+[ext_resource type="Script" path="res://back_button.gd" id="9_2r50y"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bbn2c")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(700, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -156.0
+offset_right = 350.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 58
+
+[node name="HOST" type="TextureRect" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture = ExtResource("2_b0cep")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/HOST"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 128.0
+offset_top = 18.0
+offset_right = 562.0
+offset_bottom = 96.0
+script = ExtResource("3_2lv0w")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/VBoxContainer/HOST"]
+position = Vector2(212, 54)
+
+[node name="MEMBER" type="TextureRect" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture = ExtResource("4_chlok")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/MEMBER"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 131.0
+offset_top = 17.0
+offset_right = 558.0
+offset_bottom = 94.0
+script = ExtResource("5_mx355")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/VBoxContainer/MEMBER"]
+position = Vector2(212, 54)
+
+[node name="BACK BUTTON" type="TextureButton" parent="."]
+offset_left = -67.0
+offset_top = 6.0
+offset_right = 333.0
+offset_bottom = 102.0
+texture_normal = ExtResource("8_im5k7")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("9_2r50y")
+
+[node name="MasterMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_2msqk")
+autoplay = true
+
+[connection signal="pressed" from="Control/VBoxContainer/HOST/Button" to="Control" method="become_host"]
+[connection signal="pressed" from="Control/VBoxContainer/HOST/Button" to="Control/VBoxContainer/HOST/Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/MEMBER/Button" to="Control" method="join_as_player_2"]
+[connection signal="pressed" from="Control/VBoxContainer/MEMBER/Button" to="Control/VBoxContainer/MEMBER/Button" method="_on_pressed"]
+[connection signal="pressed" from="BACK BUTTON" to="BACK BUTTON" method="_on_pressed"]

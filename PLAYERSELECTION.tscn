@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccbkbu0quosuo"]
+
+[ext_resource type="Script" path="res://playerselection.gd" id="1_py3w3"]
+[ext_resource type="Texture2D" uid="uid://bxgqtxj2namfr" path="res://ENTER NAME (2).png" id="2_xoatd"]
+[ext_resource type="FontFile" uid="uid://buvw3iifvn4n7" path="res://PICTURES/FONT/Happy School.ttf" id="3_1su4j"]
+[ext_resource type="Texture2D" uid="uid://jg5d8rah3xin" path="res://landscape (2500 x 1080 px) (2500 x 600 px) (3).png" id="3_md14d"]
+[ext_resource type="Script" path="res://back_button.gd" id="4_32wbo"]
+[ext_resource type="Theme" uid="uid://bgqig27qthhma" path="res://PICTURES/BUTTONS/PROCEED.tres" id="4_kbk5h"]
+
+[sub_resource type="FontVariation" id="FontVariation_th1x4"]
+base_font = ExtResource("3_1su4j")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PLAYERSELECTION" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_py3w3")
+
+[node name="TextureRect" type="TextureRect" parent="PLAYERSELECTION"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xoatd")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PLAYERSELECTION"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -422.5
+offset_top = -273.0
+offset_right = 422.5
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 29
+
+[node name="Label" type="Label" parent="PLAYERSELECTION/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_th1x4")
+theme_override_font_sizes/font_size = 35
+text = "Select Number of Players"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerButtons" type="VBoxContainer" parent="PLAYERSELECTION/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 43
+
+[node name="Player1Button" type="Button" parent="PLAYERSELECTION/VBoxContainer/PlayerButtons"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1su4j")
+theme_override_font_sizes/font_size = 37
+text = "1 PLAYER"
+
+[node name="Player2Button" type="Button" parent="PLAYERSELECTION/VBoxContainer/PlayerButtons"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1su4j")
+theme_override_font_sizes/font_size = 37
+text = "2 PLAYERS"
+
+[node name="Player3Button" type="Button" parent="PLAYERSELECTION/VBoxContainer/PlayerButtons"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1su4j")
+theme_override_font_sizes/font_size = 37
+text = "3 PLAYERS"
+
+[node name="Player4Button" type="Button" parent="PLAYERSELECTION/VBoxContainer/PlayerButtons"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1su4j")
+theme_override_font_sizes/font_size = 37
+text = "4 PLAYERS"
+
+[node name="ContinueButton" type="Button" parent="PLAYERSELECTION"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 566.0
+offset_right = 1091.0
+offset_bottom = 633.0
+theme = ExtResource("4_kbk5h")
+
+[node name="SelectedLabel" type="Label" parent="PLAYERSELECTION"]
+offset_left = -1.0
+offset_top = 570.0
+offset_right = 453.0
+offset_bottom = 627.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_th1x4")
+theme_override_font_sizes/font_size = 45
+text = "Selected:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BACK BUTTON" type="TextureButton" parent="."]
+offset_left = -67.0
+offset_top = 6.0
+offset_right = 333.0
+offset_bottom = 102.0
+texture_normal = ExtResource("3_md14d")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_32wbo")
+
+[connection signal="pressed" from="PLAYERSELECTION/ContinueButton" to="PLAYERSELECTION" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="BACK BUTTON" to="BACK BUTTON" method="_on_pressed"]

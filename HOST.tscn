@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhgi6q8o0ngri"]
+
+[ext_resource type="Script" path="res://GameMode.gd" id="1_yjaaw"]
+[ext_resource type="Texture2D" uid="uid://bslhy0h1o3obs" path="res://PICTURES/BACKGROUNDS/landscape (16).png" id="2_0uiau"]
+[ext_resource type="Texture2D" uid="uid://jg5d8rah3xin" path="res://landscape (2500 x 1080 px) (2500 x 600 px) (3).png" id="7_e00i5"]
+[ext_resource type="Texture2D" uid="uid://bdc831bvj0yo4" path="res://PICTURES/9.png" id="7_exepl"]
+[ext_resource type="Theme" uid="uid://dkib15q1kbbj3" path="res://PICTURES/BUTTONS/STARTBUTTON.tres" id="7_ufubj"]
+[ext_resource type="AudioStream" uid="uid://c8f50gcpwed4p" path="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3" id="8_244bo"]
+[ext_resource type="FontFile" uid="uid://buvw3iifvn4n7" path="res://PICTURES/FONT/Happy School.ttf" id="9_ankp3"]
+[ext_resource type="Theme" uid="uid://blcpyu6fbg63r" path="res://PICTURES/BUTTONS/EASY.tres" id="11_2vkok"]
+[ext_resource type="Theme" uid="uid://b4at0kcx8qa1s" path="res://PICTURES/BUTTONS/AVERAGE.tres" id="12_ccn4b"]
+[ext_resource type="Theme" uid="uid://maxplwpy35" path="res://PICTURES/BUTTONS/HARD.tres" id="13_wqbg5"]
+
+[sub_resource type="FontVariation" id="FontVariation_0plsx"]
+base_font = ExtResource("9_ankp3")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GameMode" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_yjaaw")
+
+[node name="TextureRect" type="TextureRect" parent="GameMode"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0uiau")
+expand_mode = 1
+
+[node name="BACK BUTTON" type="TextureButton" parent="GameMode"]
+layout_mode = 0
+offset_left = -67.0
+offset_top = 6.0
+offset_right = 333.0
+offset_bottom = 102.0
+texture_normal = ExtResource("7_e00i5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GameMode"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 313.0
+offset_top = 4.0
+offset_right = -302.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LOGO" type="TextureRect" parent="GameMode/VBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(50, 110)
+layout_mode = 2
+texture = ExtResource("7_exepl")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="EASY" type="Button" parent="GameMode"]
+clip_children = 2
+layout_mode = 0
+offset_left = 351.0
+offset_top = 255.0
+offset_right = 789.0
+offset_bottom = 383.0
+theme = ExtResource("11_2vkok")
+
+[node name="AVERAGE" type="Button" parent="GameMode"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 389.0
+offset_right = 848.0
+offset_bottom = 488.0
+theme = ExtResource("12_ccn4b")
+
+[node name="HARD" type="Button" parent="GameMode"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 482.0
+offset_right = 860.0
+offset_bottom = 589.0
+theme = ExtResource("13_wqbg5")
+
+[node name="QuestionSpinBox" type="SpinBox" parent="GameMode"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 162.0
+offset_right = 707.063
+offset_bottom = 193.0
+
+[node name="StartButton" type="Button" parent="GameMode"]
+layout_mode = 0
+offset_left = 873.0
+offset_top = 572.0
+offset_right = 1182.0
+offset_bottom = 633.0
+theme = ExtResource("7_ufubj")
+
+[node name="SelectedDifficultyLabel" type="Label" parent="GameMode"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -97.0
+offset_top = -50.0
+offset_right = 97.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = SubResource("FontVariation_0plsx")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameMode"]
+visible = false
+layout_mode = 0
+offset_left = 628.0
+offset_top = 165.0
+offset_right = 686.0
+offset_bottom = 188.0
+
+[node name="QuestionSlider" type="HSlider" parent="GameMode/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameMode/HBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_244bo")
+autoplay = true
+
+[connection signal="pressed" from="GameMode/BACK BUTTON" to="GameMode" method="_on_back_button_pressed"]
+[connection signal="pressed" from="GameMode/EASY" to="GameMode" method="_on_easy_pressed"]
+[connection signal="pressed" from="GameMode/AVERAGE" to="GameMode" method="_on_average_pressed"]
+[connection signal="pressed" from="GameMode/HARD" to="GameMode" method="_on_hard_pressed"]
+[connection signal="changed" from="GameMode/QuestionSpinBox" to="GameMode" method="_on_question_spinbox_changed"]
+[connection signal="pressed" from="GameMode/StartButton" to="GameMode" method="_on_start_button_pressed"]

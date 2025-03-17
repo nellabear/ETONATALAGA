@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="IQuizQuestion" load_steps=3 format=3 uid="uid://coddgsw4k6rr1"]
+
+[ext_resource type="Script" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/IQUESTION.gd" id="1_1e3kc"]
+[ext_resource type="Texture2D" uid="uid://cr84bl6vugadw" path="res://IDENTIFICATION/IUI/53.png" id="1_gwmh1"]
+
+[resource]
+script = ExtResource("1_1e3kc")
+Iquestion_info = ""
+Itype = 1
+Iquestion_image = ExtResource("1_gwmh1")
+Ioptions = Array[String]([])
+Icorrect = "Circulatory System"

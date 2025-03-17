@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8f50gcpwed4p"
+path="res://.godot/imported/Axie Infinity - Official  Lobby Background Music.mp3-184a9f45656f5737e03fba05cfc6894a.mp3str"
+
+[deps]
+
+source_file="res://AUDIO/Axie Infinity - Official  Lobby Background Music.mp3"
+dest_files=["res://.godot/imported/Axie Infinity - Official  Lobby Background Music.mp3-184a9f45656f5737e03fba05cfc6894a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
