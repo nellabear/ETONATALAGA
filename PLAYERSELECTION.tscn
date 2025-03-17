@@ -95,6 +95,7 @@ offset_bottom = 633.0
 theme = ExtResource("4_kbk5h")
 
 [node name="SelectedLabel" type="Label" parent="PLAYERSELECTION"]
+layout_mode = 0
 offset_left = -1.0
 offset_top = 570.0
 offset_right = 453.0
