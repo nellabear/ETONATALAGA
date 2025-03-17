@@ -1,10 +1,10 @@
 [gd_scene load_steps=29 format=3 uid="uid://bsgtu3v3m5j7j"]
 
-[ext_resource type="Texture2D" uid="uid://wb85fpk0imdd" path="res://IDENTIFICATION/IUI/landscape (4).png" id="1_hohmp"]
 [ext_resource type="Script" path="res://IDENTIFICATION/ISCRIPTS/ICONTROLLERS/IGAME_CONTROLLER.gd" id="1_of6dv"]
 [ext_resource type="Texture2D" uid="uid://c1rgibjnb815c" path="res://MultiplayerScripts/14.png" id="2_588ab"]
 [ext_resource type="Resource" uid="uid://dotcl7ddmtfil" path="res://IDENTIFICATION/ISCRIPTS/IRESOURCE/IVARIED/ITHEME/ITHEME_VARIED.tres" id="2_haf48"]
 [ext_resource type="Texture2D" uid="uid://clowp872iqadl" path="res://MultiplayerScripts/15.png" id="3_2iwwd"]
+[ext_resource type="Texture2D" uid="uid://5as1klbjh4tv" path="res://PICTURES/BACKGROUNDS/landscape (13).png" id="3_g1s3s"]
 [ext_resource type="Texture2D" uid="uid://br0xas1xtrxxf" path="res://MultiplayerScripts/16.png" id="4_lpfww"]
 [ext_resource type="Texture2D" uid="uid://cyetkdmwmes45" path="res://MultiplayerScripts/17.png" id="5_scmyq"]
 [ext_resource type="AudioStream" uid="uid://yq4dmn5aipaf" path="res://AUDIO/CORRECT.MP3" id="6_520kp"]
@@ -79,7 +79,7 @@ offset_right = 71.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_hohmp")
+texture = ExtResource("3_g1s3s")
 expand_mode = 1
 
 [node name="PLAYER" type="VBoxContainer" parent="IDENTIFICATION/Content"]
@@ -220,10 +220,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_vn1em")
 
 [node name="PowerUpPanel" type="Panel" parent="IDENTIFICATION/Content"]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 316.0
-offset_right = 124.0
-offset_bottom = 626.0
+offset_left = 12.0
+offset_top = 182.0
+offset_right = 160.0
+offset_bottom = 553.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="IDENTIFICATION/Content/PowerUpPanel"]
 layout_mode = 1
@@ -239,15 +239,6 @@ offset_left = 24.0
 offset_top = 288.0
 offset_right = 125.0
 offset_bottom = 311.0
-
-[node name="ScoreContainer" type="VBoxContainer" parent="IDENTIFICATION/Content"]
-offset_left = 39.0
-offset_top = 111.0
-offset_right = 79.0
-offset_bottom = 151.0
-
-[node name="ScoreLabel" type="Label" parent="IDENTIFICATION/Content/ScoreContainer"]
-layout_mode = 2
 
 [node name="PlayerTurnLabel" type="Label" parent="IDENTIFICATION/Content"]
 layout_mode = 1
@@ -277,6 +268,16 @@ offset_bottom = 146.0
 
 [node name="ResponseTimeLabel" type="Label" parent="IDENTIFICATION/Content/ResponseTimesContainer"]
 layout_mode = 2
+
+[node name="ScoreContainer" type="HBoxContainer" parent="IDENTIFICATION/Content"]
+offset_left = 161.0
+offset_top = 24.0
+offset_right = 464.0
+offset_bottom = 173.0
+
+[node name="ScoreLabel" type="Label" parent="IDENTIFICATION/Content/ScoreContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_nw4nu")
 
 [node name="IAudioCorrect" type="AudioStreamPlayer" parent="IDENTIFICATION"]
 stream = ExtResource("6_520kp")

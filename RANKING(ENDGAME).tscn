@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://0dikvis7cd6w"]
+[gd_scene load_steps=13 format=3 uid="uid://0dikvis7cd6w"]
 
 [ext_resource type="Texture2D" uid="uid://cc4evoelljs80" path="res://landscape (12).png" id="1_5xb5r"]
 [ext_resource type="Script" path="res://rankscene.gd" id="1_no3ix"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://dsqvcyuv8f0ib" path="res://PICTURES/BUTTONS/MAINMENU.tres" id="4_ca6af"]
 [ext_resource type="Shader" path="res://RANKING(ENDGAME).gdshader" id="4_i6ubl"]
 [ext_resource type="Texture2D" uid="uid://bdo7dilod8t6l" path="res://PICTURES/BUTTONS/landscape (14).png" id="5_fq7x8"]
+[ext_resource type="AudioStream" uid="uid://bimm37aampyir" path="res://AUDIO/ORIGINAL GRADUATION SONG.mp3" id="8_vlxo0"]
 
 [sub_resource type="FontVariation" id="FontVariation_414vm"]
 base_font = ExtResource("3_vod63")
@@ -157,6 +158,10 @@ offset_top = 10.0
 offset_right = 298.0
 offset_bottom = 82.0
 theme = ExtResource("4_ca6af")
+
+[node name="MusicValue" type="AudioStreamPlayer" parent="RANKSCENE"]
+stream = ExtResource("8_vlxo0")
+autoplay = true
 
 [connection signal="pressed" from="RANKSCENE/PlayAgainButton" to="RANKSCENE" method="_on_play_again_pressed"]
 [connection signal="pressed" from="RANKSCENE/MainMenuButton" to="RANKSCENE" method="_on_main_menu_pressed"]

@@ -84,7 +84,21 @@ stream = ExtResource("6_arskm")
 stream = ExtResource("5_rw0bn")
 autoplay = true
 
+[node name="SoundEffects" type="VBoxContainer" parent="Control"]
+visible = false
+offset_right = 177.0
+offset_bottom = 225.0
+
+[node name="MusicValue" type="HSlider" parent="Control/SoundEffects"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="MusicValue" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
 [connection signal="pressed" from="Control/TextureRect/Button" to="Control/TextureRect/Button" method="_on_pressed"]
 [connection signal="toggled" from="Control/Mute" to="Control" method="_on_mute_toggled"]
 [connection signal="value_changed" from="Control/VolumeSettings/BackgroundMusic/Master" to="Control" method="_on_master_value_changed"]
 [connection signal="value_changed" from="Control/VolumeSettings/SoundEffects/SFX" to="Control" method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="Control/SoundEffects/MusicValue" to="Control" method="_on_music_value_changed"]

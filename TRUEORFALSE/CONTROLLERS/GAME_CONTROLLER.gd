@@ -17,7 +17,7 @@ var current_quiz: QuizQuestion:
 @onready var question_image: TextureRect = $Content/QuestionInfo/ImageHolder/QuestionImage
 @onready var question_video: VideoStreamPlayer = $Content/QuestionInfo/ImageHolder/QuestionVideo
 @onready var question_audio: AudioStreamPlayer = $Content/QuestionInfo/ImageHolder/QuestionAudio
-@onready var score_container: VBoxContainer = $Content/ScoreContainer
+@onready var score_container: HBoxContainer = $Content/ScoreContainer
 @onready var score_label: Label = $Content/ScoreContainer/ScoreLabel
 @onready var response_times_container: VBoxContainer = $Content/ResponseTimesContainer
 @onready var response_time_label: Label = $Content/ResponseTimesContainer/ResponseTimeLabel
@@ -59,7 +59,7 @@ func _ready() -> void:
 func setup_player_scores():
 	# Create score labels for each player
 	for i in range(GameData.player_count):
-		var score_row = VBoxContainer.new()
+		var score_row = HBoxContainer.new()
 		score_row.name = "PlayerRow" + str(i)
 		
 		var name_label = Label.new()

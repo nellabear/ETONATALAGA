@@ -17,7 +17,7 @@ var current_quiz: MQuizQuestion:
 @onready var Mquestion_image: TextureRect = $Content/MQuestionInfo/MImageHolder/MQuestionImage 
 @onready var Mquestion_video: VideoStreamPlayer = $Content/MQuestionInfo/MImageHolder/MQuestionVideo
 @onready var Mquestion_audio: AudioStreamPlayer = $Content/MQuestionInfo/MImageHolder/MQuestionAudio
-@onready var score_container: VBoxContainer = $Content/ScoreContainer
+@onready var score_container: HBoxContainer = $Content/ScoreContainer
 @onready var score_label: Label = $Content/ScoreContainer/ScoreLabel
 
 var power_up_chance = 0.3  # 30% chance to get a power-up
@@ -45,7 +45,7 @@ func _ready() -> void:
 func setup_player_scores():
 	# Create score labels for each player
 	for i in range(GameData.player_count):
-		var score_row = VBoxContainer.new()
+		var score_row = HBoxContainer.new()
 		score_row.name = "PlayerRow" + str(i)
 		
 		var name_label = Label.new()
