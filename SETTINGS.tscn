@@ -86,6 +86,7 @@ autoplay = true
 
 [node name="SoundEffects" type="VBoxContainer" parent="Control"]
 visible = false
+layout_mode = 0
 offset_right = 177.0
 offset_bottom = 225.0
 

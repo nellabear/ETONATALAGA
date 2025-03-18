@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://74dhmoriwmmg"]
+[gd_scene load_steps=25 format=3 uid="uid://74dhmoriwmmg"]
 
 [ext_resource type="Script" path="res://MULTILPLECHOICE/MSCRIPTS/MCONTROLLERS/MGAME_CONTROLLER.gd" id="1_blsmx"]
 [ext_resource type="Texture2D" uid="uid://c1rgibjnb815c" path="res://MultiplayerScripts/14.png" id="2_dfarq"]
-[ext_resource type="Resource" uid="uid://bbkl1c3104ohg" path="res://MULTILPLECHOICE/MSCRIPTS/MRESOURCE/MVARIED/MTHEME/MTHEME_VARIED.tres" id="2_s7g20"]
 [ext_resource type="Texture2D" uid="uid://bmt0r1evsrrob" path="res://PICTURES/BACKGROUNDS/landscape (14).png" id="3_14djk"]
 [ext_resource type="Texture2D" uid="uid://clowp872iqadl" path="res://MultiplayerScripts/15.png" id="3_d7k30"]
 [ext_resource type="Texture2D" uid="uid://br0xas1xtrxxf" path="res://MultiplayerScripts/16.png" id="4_lfwpo"]
@@ -51,9 +50,6 @@ shadow_color = Color(0.882282, 0.708932, 0.75974, 0)
 
 [node name="MULTIPLECHOICE" type="CanvasLayer" parent="."]
 script = ExtResource("1_blsmx")
-quiz = ExtResource("2_s7g20")
-color_right = Color(0, 0.913725, 0, 1)
-color_wrong = Color(0.827451, 0, 0, 1)
 
 [node name="Content" type="Control" parent="MULTIPLECHOICE"]
 layout_mode = 3

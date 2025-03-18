@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://cydbpueuf5o3k"]
+[gd_scene load_steps=26 format=3 uid="uid://cydbpueuf5o3k"]
 
 [ext_resource type="Script" path="res://TRUEORFALSE/CONTROLLERS/GAME_CONTROLLER.gd" id="1_0wfp7"]
 [ext_resource type="Texture2D" uid="uid://c1rgibjnb815c" path="res://MultiplayerScripts/14.png" id="2_btxro"]
-[ext_resource type="Resource" uid="uid://brfx5ca3getbh" path="res://TRUEORFALSE/SCRIPTS/RESOURCE/VARIED/THEME/THEME_VARIED.tres" id="2_rm8ms"]
 [ext_resource type="Texture2D" uid="uid://clowp872iqadl" path="res://MultiplayerScripts/15.png" id="3_hi0w8"]
 [ext_resource type="Texture2D" uid="uid://cul8dknmc7nuy" path="res://PICTURES/landscape (12).png" id="3_xs2d6"]
 [ext_resource type="Texture2D" uid="uid://bfuegrdugftim" path="res://TRUEORFALSE/UI/33.png" id="4_4ymp2"]
@@ -52,9 +51,6 @@ shadow_color = Color(0.882282, 0.708932, 0.75974, 0)
 
 [node name="TRUEorFALSE" type="CanvasLayer" parent="."]
 script = ExtResource("1_0wfp7")
-quiz = ExtResource("2_rm8ms")
-color_right = Color(0, 0.796078, 0, 1)
-color_wrong = Color(0.870588, 0, 0, 1)
 
 [node name="Content" type="Control" parent="TRUEorFALSE"]
 layout_mode = 3
